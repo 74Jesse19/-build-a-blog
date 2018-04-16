@@ -55,7 +55,7 @@ def newpost():
         if not blogtitle:
             titleError = "Please fill in the title"
         
-        if not blogpost:
+        if blogpost == '':
             bodyError = "Please fill in the body" 
 
         if not titleError and not bodyError:
@@ -76,7 +76,7 @@ def newpost():
 @app.route('/', methods=['POST','GET'])
 def index():
 
-    return render_template('newpost.html')
+    return redirect('/blog')
  
 
 
